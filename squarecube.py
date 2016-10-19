@@ -11,10 +11,10 @@ def square():
         print("Square of the number " + str(user) + " is " + str(square))
     elif makeUse.strip() == "Cube":
         print(" ")
-        userAgain = int(raw_input("Enter number to get square : "))
-        cube = userAgain ** 2
+        userAgain = int(raw_input("Enter number to get cube : "))
+        cube = userAgain ** 3
         print(" ")
-        print("Square of the number " + str(userAgain) + " is " + str(cube))
+        print("Cube of the number " + str(userAgain) + " is " + str(cube))
 
 # main code
 
