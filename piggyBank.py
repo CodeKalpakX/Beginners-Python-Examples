@@ -15,7 +15,7 @@ def withdrawMoney():
     print(" ")
     userWithdraw = float(raw_input("Add money : "))
     print(" ")
-    money = money + userWithdraw
+    money = money - userWithdraw
     print("After adding current Money you have is " + str(money) + " rupees")
 
 # function to display current amount
