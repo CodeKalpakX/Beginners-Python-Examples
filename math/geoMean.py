@@ -1,19 +1,32 @@
-# Add path, encoding
+#!/usr/bin
 
-import math
+# Geometric Mean: https://en.wikipedia.org/wiki/Geometric_mean
+
+def geoMean(*args):
+    '''Calculates and returns geometric mean of list of integers'''
+    n = len(args)
+
+    prod = 1
+    for i in range(n):
+        prod = prod*args[i]
+
+    gmean = prod**(1/n)
+    return gmean
 
 
-# Geometric Mean:
-# Calculates the geometric mean of 
-# two numbers 
-# formula: f(x, y) = square_root(x*y)
+if __name__ == "__main__":
 
-geoMean = lambda x, y: math.sqrt(x*y)
+    flag = 1
+    while(flag):
 
+        # Take input from user
+        numbers = list(map(int, input('Enter integers separated by space: ').split()))
 
-while True:
-	if input("Start [Y/n]?  ").strip().lower() == "y":
-		print(" [Res] = " + str(geoMean(float(input("\nX? ")), float(input("Y? ")))) + "\n\n")
-	else:
-		print("\n\nGoodBye!")
-		break
+        # call function
+        g = geoMean(*numbers)  #list unpacking
+
+        # display output
+        print('The geometric mean of {} is {:.4}\n'.format(numbers, g))
+
+        flag = int(input('Enter 1 to repeat, 0 to quit: '))
+        print()
