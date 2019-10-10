@@ -38,7 +38,7 @@ class BattleShip:
 
 	def no_place_for_old_guess(self, row, col):
 		# Replaces the co-ordinate at wrong guessed
-		# ship position for convinience with X
+		# ship position for convenience with X
 		self.board[row][col] = "X "
 
 
@@ -52,49 +52,61 @@ def battleshipUI():
 	max_turns = 5
 	turns = 0
 
-
-	# Board of rows * columns for playing
-	rows = int(input("How many rows? "))
-	cols = int(input("How many columns? "))
-	lets_battle = BattleShip(rows, cols, "o ")
-
-	
-	# Execute until user runs out of chances
-	while turns < max_turns:
-		# View the board at each new chance
-		print("\n\nOcean:")
-		lets_battle.view()
-
-
-		# User to guess position of ship
-		row_guess = int(input("\nGuess row? "))
-		col_guess = int(input("Guess column? "))
-
-
-		# Conditions if user guessed correctly,
-		# or missed it or guessed extremely wrong
-		# co-ordinates
-		if lets_battle.is_ship_there(row_guess, col_guess):
-			print("\n  > Damn! You sunk my SHIP!")
-			print("  > You Won the Game!\n\nSee You Soon!")
-			sys.exit(0)
+	# This while cycle is used for input validation
+	while (True):
+		# Board of rows * columns for playing
+		try:
+			rows = int(input("How many rows? "))
+			cols = int(input("How many columns? "))
+		except:
+			print("You must type a integer!")
+			continue
 		
-		elif (row_guess >= rows or row_guess < 0 or col_guess >= cols or col_guess < 0):
-			print("\n - Ship isn't even in Ocean!")
+		lets_battle = BattleShip(rows, cols, "o ")
+
 		
-		else:
-			if lets_battle.get(row_guess, row_guess) == "X ":
-				print("\n - Really you tried that already!")
-			else:
-				print("\n - Wrong Guess! Use your sailor's instincts!")
-			
-			# Replace symbol o with X to tell user 
-			# He/She already tried those co-ordinates
-			lets_battle.no_place_for_old_guess(row_guess, col_guess)
+		# Execute until user runs out of chances
+		while turns < max_turns:
+			# View the board at each new chance
+			print("\n\nOcean:")
+			lets_battle.view()
 
-		turns += 1
+			# This while cycle is used for input validation
+			while(True):
+				# Ask user to guess position of ship
+				try:
+					row_guess = int(input("\nGuess row? "))
+					col_guess = int(input("Guess column? "))
+				except:
+					print("You must type a integer!")
+					continue
 
-	print("\n~~~GAMEOVER~~~")
+				# Conditions if user guessed correctly,
+				# or missed it or guessed extremely wrong
+				# co-ordinates
+				if lets_battle.is_ship_there(row_guess, col_guess):
+					print("\n  > Damn! You sunk my SHIP!")
+					print("  > You Won the Game!\n\nSee You Soon!")
+					sys.exit(0)
+				
+				elif (row_guess >= rows or row_guess < 0 or col_guess >= cols or col_guess < 0):
+					print("\n - Ship isn't even in Ocean!")
+				
+				else:
+					if lets_battle.get(row_guess, row_guess) == "X ":
+						print("\n - Really you tried that already!")
+					else:
+						print("\n - Wrong Guess! Use your sailor's instincts!")
+					
+					# Replace symbol o with X to tell user 
+					# He/She already tried those co-ordinates
+					lets_battle.no_place_for_old_guess(row_guess, col_guess)
+
+				turns += 1
+				break
+
+		print("\n~~~GAMEOVER~~~")
+		break
 
 
 battleshipUI()
