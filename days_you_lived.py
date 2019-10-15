@@ -1,6 +1,7 @@
-# We assume that given dates are correct
-# and 
-# solved for problem set in cs course on udacity.com
+''' We assume that given dates are correct
+and 
+solved for problem set in cs course on udacity.com
+'''
 
 from calendar import isleap
 
