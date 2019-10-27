@@ -14,28 +14,17 @@ import sys
 # See: https://en.wikipedia.org/wiki/Collatz_conjecture
 
 # Collatz series generator
-def collatz_conjecture(n):
-    if n < 1: 
-    	raise Exception("\n  Expected a value greater than 1")
-	
+print("Collatz Sequence")
+x = int(input("Enter a number: "))
+
+def collatz(n):
+    print(n)
     while n != 1:
-		if n % 2 == 0:
-			n = n // 2
-		else: n = 3*n + 1
-		yield n
+        if n % 2 == 0:
+            n = n / 2
+        else:
+            n = (n * 3)+ 1
+        print(n)
 
-# If n will be negative then
-# sequence will be infinite
 
-# Interface
-# Test/Play
-i = 0
-while True:
-	if raw_input("\n[%i] Continue[Y/n]?: " % i).strip().lower() == "y":
-		for v in collatz_conjecture(int(raw_input("N?: "))):
-			print("  > " + str(v))
-		i += 1
-	else:
-		print("\nSee you soon!")
-		sys.exit(0)
-
+collatz(x)
