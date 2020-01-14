@@ -12,4 +12,4 @@ def linear_search(array, to_find):
 	return to_return
 	
 nums = [12, 34, 54, 88, 21]			
-print linear_search(nums, 88)			
+print(linear_search(nums, 88))			

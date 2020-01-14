@@ -27,3 +27,11 @@ print(tupC[2],'\n')
 # iterating through tuples
 for x in tupC:
 	print(x)
+	
+	
+	
+	########
+	
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+	
