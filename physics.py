@@ -1,106 +1,88 @@
 # physics calcy
 
-operations = [ "Preassure" , "Force" , "Speed" , "Velocity" , "Accelaration" , "Momentum" ]
+operations = ["1. Pressure", "2. Force", "3. Speed", "4. Velocity", "5. Accelaration", "6. Momentum"]
 
-#pre code sector I
+
+# pre code sector I
 # preassure function to calculate preassure
-def preassure():
-    print(" ")
-    force = int(raw_input("Enter force : "))
-    print(" ")
-    area = int(raw_input("Enter area : "))
+def pressure():
+    force = int(input("\nEnter force : "))
+    area = int(input("\nEnter area : "))
     preassure = force / area
-    print(" ")
-    print("Preassure is " + str(preassure) + "pascal")
+    print(f"\nPreassure is {preassure}")
+
 
 # force function to calculate force
 def force():
-    print(" ")
-    mass = int(raw_input("Enter mass : "))
-    print(" ")
-    accelaration = int(raw_input("Enter accelaration : "))
+    mass = int(input("\nEnter mass : "))
+    accelaration = int(input("\nEnter accelaration : "))
     force = mass * accelaration
-    print(" ")
-    print("Force is " + str(force) + "newton")
+    print(f"\nForce is  {force} Newtons")
+
 
 # speed func to calculate speed of object
 def speed():
-    print(" ")
-    distance = int(raw_input("Enter distance : "))
-    print(" ")
-    time = int(raw_input("Enter time taken : "))
+    distance = int(input("\nEnter distance : "))
+    time = int(input("\nEnter time taken : "))
     speed = distance / time
-    print(" ")
-    print("Speed of object is " + str(speed))
+    print(f"\nSpeed of object is {speed}")
+
 
 # velocity func to calculate velocity of object
 def velocity():
-    print(" ")
-    displacement = int(raw_input("Enter displacement : "))
-    print(" ")
-    time = int(raw_input("Enter time taken : "))
+    displacement = int(input("\nEnter displacement : "))
+    time = int(input("\nEnter time taken : "))
     velocity = displacement / time
-    print(" ")
-    print("Velocity of object is " + str(velocity))
+    print(f"\nVelocity of object is {velocity}")
+
 
 # accelaration func to calculate accelaration
 def accelaration():
-    print(" ")
-    initialV = int(raw_input("Enter initial velocity : "))
-    print(" ")
-    finalV = int(raw_input("Enter final velocity : "))
-    print(" ")
-    time = int(raw_input("Enter time taken : "))
+    initialV = int(input("Enter initial velocity : "))
+    finalV = int(input("Enter final velocity : "))
+    time = int(input("Enter time taken : "))
     acce = (finalV - initialV) / time
-    print(" ")
-    print("Accelaration is " + str(acce) + "m/s sq.")
+    print(f"Accelaration is {acce}")
+
 
 # monentum func to calculate momentum
 def moment():
-    print(" ")
-    mass = int(raw_input("Enter mass : "))
-    print(" ")
-    velocity = int(raw_input("Enter velocity : "))
-    print(" ")
+    mass = int(input("Enter mass : "))
+    velocity = int(input("Enter velocity : "))
     momentum = mass * velocity
-    print(" ")
-    print("Momentum is " + str(momentum))
+    print(f"Momentum is {momentum}")
+
 
 # CLI code sector II
 
 while True:
-    print(" ")
-    print("Hello")
-    print(" ")
-    startOrEnd = raw_input("Start or End : ")
-    print(" ")
-    if startOrEnd.strip() == "Start" :
+    print("\nHello,")
+    startOrEnd = input("Start or End : ")
+    if startOrEnd.lower() == "start":
         for op in operations:
             print(op)
-            print(" ")
 
-        main = raw_input("Which operation : ")
-        if main.strip() == "Preassure":
-            print(preassure())
-            continue
-        elif main.strip() == "Force":
+        main = int(input("\nEnter 1-6 for Desired Operation : "))
+        if main == 1:
+            print(pressure())
+
+        elif main == 2:
             print(force())
-            continue
-        elif main.strip() == "Speed":
+
+        elif main == 3:
             print(speed())
-            continue
-        elif main.strip() == "Velocity":
+
+        elif main == 4:
             print(velocity())
-            continue
-        elif main.strip() == "Accelaration":
+
+        elif main == 5:
             print(accelaration())
-            continue
-        elif main.strip() == "Momentum":
+
+        elif main == 6:
             print(moment())
-            continue
-        else :
+
+        else:
             print("Invalid operation")
-            continue
-    elif startOrEnd.strip() == "End":
+
+    elif startOrEnd.lower() == "end":
         print("...Progarm Ended...")
-        break
