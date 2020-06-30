@@ -1,0 +1,12 @@
+
+
+Battleship:
+  Computer places a ship on the board
+  User/Player has to guess the position os ship
+  
+  Rows and columns are numbered from 0 to n-1
+  and not 1 to n
+  
+  Structure of code can be understood by giving a careful look!
+  You'll notice the game is highly customizable!
+  Enjoy the game!

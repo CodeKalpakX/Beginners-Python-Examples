@@ -1,0 +1,12 @@
+
+
+
+DiceRollingSimulator:
+      Basically simulates rolling of die for 'n' players
+      Playing with given number of dies
+      Each player is identified by name
+      During each dice rolling session, session is called as round
+      After each round user can either continue playing another round
+      Or simply exit
+
+      Simulator is helpful in playing all board games played with dies
