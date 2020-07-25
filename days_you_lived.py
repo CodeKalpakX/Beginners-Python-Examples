@@ -1,7 +1,6 @@
 # We assume that given dates are correct
 # and 
 # solved for problem set in cs course on udacity.com
-
 from calendar import isleap
 
 def daysBetweenDates(year1, month1, day1, year2, month2, day2):
@@ -26,3 +25,12 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
             days += sum(dom)
     return days
     
+
+date1=input("Enter a first date in YYYY-MM-DD format")
+year1,month1,day1=map(int,date1.split('-'))
+
+date2=input("Enter a second date in YYYY-MM-DD format")
+year2,month2,day2=map(int,date2.split('-'))
+
+days=daysBetweenDates(year1, month1, day1, year2, month2, day2)
+print("Number of days between {} and {} is \n  {}".format(date1,date2,abs(days)))
