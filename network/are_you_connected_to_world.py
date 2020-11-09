@@ -1,20 +1,18 @@
-
-
 import os
 import sys
 import webbrowser
-from time import sleep as sleep_sheep 
+from time import sleep
 
 
 # Executing ping with input host
 # using systems functionality (only linux)
 def ping(host):
-	instr = "ping -c 1 %s" %(host) 
+	instr = "ping -c 1 %s" %(host)
 	response = os.system(instr)
 	return response == 0
 
 
-# Finite state loop if 
+# Finite state loop if
 # computer re-connects to network
 # else will run till re-conn
 def you_cant_be_dead(host):
@@ -26,9 +24,9 @@ def you_cant_be_dead(host):
 			if not ping(host): continue
 			else: break
 
-			# Connectivity is checked 
+			# Connectivity is checked
 			# every 7 secs
-			sleep_sheep(7)
+			sleep(7)
 
 	return True
 
@@ -41,13 +39,13 @@ def exit_(status):
 		return None
 
 
-# User 
+# User
 # Shell Interface
 while True:
-	if raw_input("\nStart [Y/n]? ").strip().lower() == "y":
-		inp = raw_input("URI (alive) HOST: ").strip()
+	if input("\nStart [Y/n]? ").strip().lower() == "y":
+		inp = input("URI (alive) HOST: ").strip()
 		print("\n > CHECKING CONNECTION...\n > Host -> %s\n" % inp)
-		
+
 		if you_cant_be_dead(inp):
 			# When connected to internet
 			# Status update, and proof of connection
