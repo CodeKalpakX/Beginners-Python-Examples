@@ -7,7 +7,7 @@
 def find_square_root(x):
     if type(x) == str:
         return "Expected an integer! Cannot find square root of an string!"
-    for i in range(x):
+    for i in range(0, (x/2 )+2):
         if i ** 2 == x:
             return i 
     return "{} is not a perfect square".format(x)
